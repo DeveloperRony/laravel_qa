@@ -34,7 +34,7 @@
                              Asked by<br/>
                              <p class="lead"><a href="{{$question->user->url}}">{{$question->user->name}}</a><p>   
                                 <small class="text-muted">{{$question->created_at->diffForHumans()}}</small><br/>
-                                {{str_limit($question->body)}}
+                                {{str_limit($question->body, 250)}}
                             </div>
                         </div>
                         <hr/>
