@@ -32,9 +32,16 @@
                                 </div>
                             </div>
                             <div class="media-body">
-                             <h3 class="mt-0"><a href="{{$question->url}}">{{$question->title}}</a></h3>
-                             Asked by<br/>
-                             <p class="lead"><a href="{{$question->user->url}}">{{$question->user->name}}</a><p>   
+                                <div class="d-flex align-items-center">
+                                     <h3 class="mt-0"><a href="{{$question->url}}">{{$question->title}}</a></h3>
+                                    <div class="ml-auto">
+                                        <a href="{{route('questions.edit', $question->id)}}" class="btn btn-sm btn-outline-info">Edit</a>
+                                    </div>
+                                </div>     
+                             
+                             <p class="lead">
+                                Asked by<br/>
+                                 <a href="{{$question->user->url}}">{{$question->user->name}}</a><p>   
                                 <small class="text-muted">{{$question->created_at->diffForHumans()}}</small><br/>
                                 {{str_limit($question->body, 250)}}
                             </div>
